@@ -1,0 +1,148 @@
+
+form, input, label, form  div{
+    margin: 0;
+    padding: 0;
+}
+.contenedor-formulario{
+    margin: 3em auto;
+    padding: 0;
+    width: 95%;
+    background-color: rgb(255, 253, 253);
+}
+.mini-contenedor{
+    width:90%;
+    max-width:600px;
+    padding:1em 2em;
+    margin: auto;
+    background-color:#fff;
+    box-shadow:0 0 3px gray;
+}
+.formulario{
+    width:100%;
+}
+.grupo-input{
+    position:relative;
+    margin-bottom: 2em;
+}
+
+input[type="text"],input[type="email"],input[type="date"]{
+    font-family:Arial;
+    width:100%;
+    height: 4em;
+    padding: 1em;
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgb(181, 249, 181);
+    text-decoration: none;
+}
+
+
+input[type="text"]:focus,input[type="email"]:focus,input[type="date"]:focus{
+    border-bottom: 3px solid rgb(3, 180, 3);
+    background: rgba(226, 224, 224, 0.453);
+}
+
+input.error,input.error:focus{/*eliminar esta linea si quiero que el borde rojo es vaya cuando haga focus*/
+    border-bottom: 3px solid rgb(197, 3, 3);
+}
+
+.error + .label{
+    color: red;
+}
+label{
+    color: rgb(1, 151, 1);
+    font-weight: bold;
+}
+.label{
+    position: absolute;
+    top: 16px;
+    left: 0;
+    font-size:16px;
+    line-height: 1em;
+    margin-left: 1em;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#date{
+    top: -1px;
+    left: -3px;
+}
+
+
+.grupo-input > .active{
+    top:-5px;
+    color:rgba(131, 131, 131, 0.642);
+    font-size: 12px;
+    line-height:12px; 
+}
+.labelCheckbox,.labelradio{
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    padding: 5px 15px 5px 51px;
+    font-size: 1em;
+    border-radius: 3px;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.labelradio:hover,.labelCheckbox:hover{
+    background-color:rgba(1, 151, 1, 0.3);
+
+}
+.labelradio::before,.labelCheckbox::before{
+    content: "";
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    left: 15px;
+    border-radius: 50%;
+    background: none;
+    border: 2px solid green;
+}
+.grupo-input.checkbox.error *,.grupo-input.radio.error *{
+    color:red;
+}
+.grupo-input.radio.error .labelradio::before,.grupo-input.checkbox.error .labelCheckbox::before{
+    border:2px solid red;
+}
+.grupo-input.radio.error .labelradio:hover,.grupo-input.checkbox.error .labelCheckbox:hover{
+    background:rgba(255, 0, 0, 0.2);
+}
+input[type="radio"],input[type="checkbox"]{
+    display:none;
+}
+input[type="radio"]:checked + label:before,input[type="checkbox"]:checked + label:before{
+    display:none;
+}
+input[type="radio"]:checked + label,input[type="checkbox"]:checked + label{
+    padding: 5px 15px;
+    background:rgba(1, 151, 1, 0.798);
+    color:#fff !important;
+    border-radius: 3px;
+}
+input[type="radio"]:checked + label:hover,input[type="checkbox"]:checked + label:hover{
+    background:rgba(1, 151, 1, 0.798) !important;
+}
+input[type="submit"]{
+    display:inline-block;
+    /* margin: 0 1em; */
+    padding: 15px;
+    width: 100%;
+    background-color:rgba(1, 151, 1, 0.798);
+    border-radius: 5px;
+    border: 3px solid #fff;
+    color:#eeeeee;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    cursor:pointer;
+}
+input[type="submit"]:hover{
+    color: #fff;
+    background-color:rgba(2, 178, 2, 0.798);
+}

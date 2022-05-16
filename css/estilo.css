@@ -1,0 +1,926 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+.padre {
+    display: flex;
+    flex-direction: column;
+}
+*::selection{
+    background-color: rgba(52, 210, 142, 0.549);
+    color:#fff;
+}
+.header {
+    margin: 0 0 2em 0;
+    z-index: 1000;
+    background: #028484;
+    position: sticky;
+    top: 0px;
+    display: flex;
+    flex-flow: row nowrap;
+    height: 9vh;
+}
+.logo {
+    margin: 7px;
+    background: rgba(230, 230, 230, 0.5);
+    border-radius: 15px;
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-imagen {
+    width: 100px;
+}
+.logo:hover {
+    background: rgba(250, 250, 250, .7);
+}
+.navegacion {
+    flex: 4 1 80%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.span {
+    padding: 10px;
+    display: flex;
+}
+.navega {
+    flex-flow: 1 1 auto;
+    padding: 10px;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.5vw;
+}
+.fontawesome {
+    padding-right: 10px;
+}
+.navega:hover, .activado {
+    border-bottom: 6px solid rgb(52, 210, 142);
+    color: #ffffff;
+    background: rgba(245, 245, 245, .2);
+    border-radius: 5px;
+}
+.carrusel{                  /* acá empiezan los estilos para el carrousel */
+    width: 100%;
+    height: 80vh;
+    max-width: 120em;
+}
+.hijo{                          /* estos son los estilos de las 4 imagenes */
+    position: absolute;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start; /* hijo uno, parrafo first eje x (los otros los modifico despues)*/
+    z-index: 1;
+}
+.parrafo{
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    width: 35vw;
+    text-align: left;
+    font-size: 1.1em;
+    color: #000;
+    align-self: flex-end; /*hijo uno, parrafo first eje y (los otros los modifico despues)*/
+}
+.parrafo p{
+    margin-top: 1.5vw;
+    font-size: 1em;
+    color: rgba(0, 0, 0,.6);
+}
+.nav{                            /* esto es el estilo de la barrita de abajo del carrousel*/
+    background-color: #028484d5;
+    width: 100%;
+    height: 5vh;
+    align-self: flex-end; 
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.nav .puntos{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.punto{             /* esto es el estilo de los puntos de la barrita de abajo del carrousel*/
+    width: 3em;
+    height: 0.5em;
+    background-color: none;
+    border: 1px solid #ffffff; 
+    border-radius: 9px;
+    margin: 1em;
+    list-style-type: none;
+}
+#puntouno,#puntodos,#puntotres,#puntocuatro{   /* esto es para que se iluminen los puntos correctos en el orden correcto*/
+    background-color: #ffffff;
+}
+.uno{
+    background: url(../imagenes/prestamosABC.jpg);
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
+    animation-name: primerhijo;
+    animation-duration: 20s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-play-state:running;
+}
+.dos{
+    background: url(../imagenes/perrito.jpg);
+    background-position:center;
+    background-attachment: contain;
+    background-size: cover;
+    animation-name: segundohijo;
+    animation-duration: 20s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-play-state:running;
+}
+.dos{
+    justify-content: flex-start; /*acá modifico el eje x del parrafo second*/
+}
+.second{
+    align-self: center;   /*acá modifico el eje y del parrafo second*/
+}
+.tres{
+    background: url(../imagenes/SlideMayores.jpg);
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
+    animation-name: tercerhijo;
+    animation-duration: 20s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-play-state:running;
+}
+.tres{
+    justify-content: flex-start; /*acá modifico el eje x del parrafo second third*/
+}
+.third{
+    align-self: center;     /*acá modifico el eje y del parrafo third*/
+}
+.cuatro{
+    background: url(../imagenes/Slide-Financiacion-MyPYME-jul.20-2.png);
+    background-position:30% 0%;
+    background-attachment:contain;
+    background-size: cover;
+    animation-name: cuartorhijo;
+    animation-duration: 20s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-play-state:running;
+}
+.cuatro{
+    justify-content: flex-end;
+}
+.fourth{
+    align-self: center;
+    background: rgb(228, 228, 228);
+    width: 20vw;
+}
+@keyframes primerhijo{          /* acá empiezan animaciones para el carrousel */
+    0% {z-index: 100;}
+    25%{z-index: 100;}
+    26%{z-index: 1;}
+    50%{z-index: 1;}
+    51%{z-index: 1;}
+    75%{z-index: 1;}
+    76%{z-index: 1;}
+    100%{z-index: 1;}
+}
+@keyframes segundohijo{
+    0% {z-index: 1;}
+    25%{z-index: 1;}
+    26%{z-index: 100;}
+    50%{z-index: 100;}
+    51%{z-index: 1;}
+    75%{z-index: 1;}
+    76%{z-index: 1;}
+    100%{z-index: 1;}
+}
+@keyframes tercerhijo{
+    0% {z-index: 1;}
+    25%{z-index: 1;}
+    26%{z-index: 1;}
+    50%{z-index: 1;}
+    51%{z-index: 100;}
+    75%{z-index: 100;}
+    76%{z-index: 1;}
+    100%{z-index: 1;}
+}
+@keyframes cuartohijo{
+    0% {z-index: 1;}
+    25%{z-index: 1;}
+    26%{z-index: 1;}
+    50%{z-index: 1;}
+    51%{z-index: 1;}
+    75%{z-index: 1;}
+    76%{z-index: 100;}
+    100%{z-index: 100;}
+}                                       /* acá termianan los estilos para el carrousel */
+.main {
+    background: rgb(255, 255, 255);
+    margin: 8em 0;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.section { 
+    margin:10px;       
+    background: none;
+    flex: 4 1 80%;
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 5em;
+}       
+                                /* acá empienzan los estilos de los articulos*/
+.articulo1 {                    /* defino las areas para ordenar los articulos*/
+    grid-area: principal;
+}
+.articulo2 {
+    grid-area: secundario;
+}
+.articulo3 {
+    grid-area: terciario;
+}
+.articulos {
+    background: #d9d9d9d1;
+    border-radius: 1em;
+    flex:  1 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 'principal secundario'
+                         'principal terciario';
+}
+.articulo1 {                      
+    margin: 1em;
+    background-color: #ffffff;
+    display: flex;  
+    flex-flow: column nowrap; /*ordeno a los hijos del articulo 1 (la imagen y el texto)*/
+}
+.articulo2,
+.articulo3 {
+    background-color: #ffffff;
+    margin: 1em;
+    display: flex;  
+    flex-flow: row nowrap; /*ordeno a los hijos del articulo 2 y 3 (la imagen y el texto)*/
+}
+.imagenDeArticulo1{   
+    margin-bottom: 1em;
+    background:url(../imagenes/PRESTAMOSPERSONALES.jpg);
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
+    flex: 1 1 60%;
+}
+.imagenDeArticulo2{   
+    margin-right: 1em;
+    background:url(../imagenes/Emprendedor.jpg);
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
+    flex: 1 1 50%;
+}
+.imagenDeArticulo3{   
+    margin-right: 1em;
+    background:url(../imagenes/jubilados.jpg);
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
+    flex: 1 1 50%;
+}
+#articulo1{
+    background:url(../imagenes/prestamosPYME1.png);
+    background-position: 60%;
+    background-attachment: contain;
+    background-size: cover;
+}
+#articulo2{
+    background:url(../imagenes/Soluciones-de-Ciberseguridad.jpg);
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
+}
+#articulo3{
+    background:url(../imagenes/segurosempresa.jpg);
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
+}
+#articulo4{
+    background:url(../imagenes/inversiones.jpg);
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
+}
+#articulo5{
+    background:url(../imagenes/CuentaCorriente.jpg);
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
+}
+#articulo6{
+    background:url(../imagenes/creditoparaSUELDOS.jpg);
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
+}
+.textoDeArticulo1{
+    flex: 1 1 40%;
+    display: flex;     /*ordeno a los hijos del texto del articulo 1 (titulo y parrafo)*/      
+    flex-flow: column nowrap;
+    justify-content:space-between;
+    align-items: stretch;
+}
+.textoDeArticulo2{
+    margin: 1em 0 0 0;
+    flex: 1 1 50%;
+    display: flex;     /*ordeno a los hijos del texto del articulo 2 y 3 (titulo y parrafo)*/      
+    flex-flow: column nowrap;
+    justify-content:space-between;
+    align-items: stretch;
+}
+.textoDeArticulo1 h2,.textoDeArticulo1 p{
+    margin: 0px 10px;
+}
+.textoDeArticulo2 h2,.textoDeArticulo2 p{
+    margin: 0 0 15px 0;
+}
+.accedeAqui{
+    align-self: flex-end;
+    margin: 1em;
+    text-decoration: none;
+    color: rgb(52, 210, 142);
+    font-weight: bold;
+}
+.accedeAqui:hover{
+    color: rgb(23, 105, 69);
+}
+.iframe h3, .iframe h2{      /* acá terminan los estilos de los articulos*/
+    margin: 0.5em;
+}
+.iframe {
+    background: #d9d9d9d1;
+    border-radius: 1em;
+    flex: 1 1 50%;
+    display: flex;
+    flex-flow:column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+iframe{
+    background-color:none;
+    box-sizing: content-box;
+    height: 65%;
+    width: 70%;
+    padding: 2.5em;
+}
+.titulo{
+    width: 70%;
+    background-color:none;
+    color: rgb(0, 0, 0);
+    font-size:0.9em;
+    display:flex;
+    flex-flow: column nowrap;
+    align-items:flex-start;
+}
+.aside {
+    padding: 1em;
+    margin:10px;
+    background: #d9d9d9d1;
+    border-radius: 10px;
+    flex: 1 1 20%;
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 1em;
+}
+.publicidad {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content:space-between;
+}
+.one{
+    background: url(../imagenes/todas-las-tarjetas-credito-movil.jpg);
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
+    height:65vh;
+    width:100%;
+    z-index: 20;
+}
+.prueba{
+    height:65vh;
+    top: 0;
+    left: 0;
+    width:100%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.15);
+    z-index: 10;
+}
+.one:hover{
+    z-index: 0;
+}
+.prueba:hover{
+    z-index: 21;
+    cursor: pointer;
+}
+.two{
+    background: url(../imagenes/seguros.jpg);
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
+    height:65vh;
+    width:100%;
+    z-index: 20;
+}
+.two:hover{
+    z-index: 0;
+}
+.propaganda{
+    padding: 15px;
+    background-color: rgb(242, 249, 255);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content:flex-start;
+    align-items: flex-start;
+    cursor:copy;
+}
+.propaganda h2:hover{
+    color: rgb(52, 210, 142);
+    cursor: pointer;
+}
+.propaganda p{
+    font-size: 1em;
+    text-align: left;
+    margin-top: 1em;
+}
+.mainInstitucioanl {
+    background: rgb(255, 255, 255);
+    margin: 8em 0;
+    display: flex;
+    flex-flow: column nowrap;
+}
+.misionVision{
+    background: #fff;
+    margin: 3em auto;
+    width: 95%;
+    height:70vh;
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content:center;
+    align-items: center;
+}
+.mision,.vision{
+    margin: 1em;
+    box-shadow: 1px 2px 4px rgb(94, 93, 93);
+    height: 65%;
+    flex: 1 1 50%;
+    display:flex;
+    flex-flow: row nowrap;
+}
+.imagen_mision,.imagen_vision{
+    flex: 1 1 50%;
+    width: 50%;
+}
+.imagen_mision{
+    background: url(../imagenes/Mision.jpg);
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
+}
+.imagen_vision{
+    background: url(../imagenes/Vision.jpg);
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
+}
+.texto_mision,.texto_vision{
+    flex: 1 1 50%;
+    width: 50%;
+    padding: .7em;
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+}
+.texto_mision h2,.texto_vision h2 {
+    margin-bottom: 0.3em;
+    color: #05ac2c;
+}
+.texto_mision p,.texto_vision p {
+    color:rgb(125, 125, 125);
+}
+.tituloValores{
+    display: inline-block;
+    margin: 0.5em 45px;
+    font-size: 1.8em;
+}
+.valores{
+    background-color: none;
+    height: 70vh;
+    width: 93%;
+    margin: 1em auto;
+    margin-bottom: 10em;
+    display: flex;
+    flex-flow:row nowrap;
+    column-gap: 1.5em;
+}
+.valor{
+    flex:1 1 30%;
+    width: 30%;
+    box-shadow:1px 2px 3px rgb(130, 130, 130);
+    display: flex;
+    flex-flow: column nowrap;
+}
+.imagenValor,.textoValor{
+    flex:1 1 auto;
+    width: 100%;
+    height: 50%;
+}
+.imagenValor1{
+    background: url(../imagenes/Integridad.jpg);
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
+}
+.imagenValor2{
+    background: url(../imagenes/Excelencia.jpg);
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
+}
+.imagenValor3{
+    background: url(../imagenes/Humanidad.jpg);
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
+}
+.textoValor{
+    padding: 0.8em;
+    color: #05ac2c;
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 0.8em;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.textoValor p{
+    font-size: 15px;
+    color: gray;
+}
+.informacionNormativa{
+    width:93%;
+    margin: auto;
+    margin-bottom: 3em;
+}
+.informacionNormativa h2{
+    margin: 1em 0;
+}
+.normativas{
+    display: inline-block;
+    margin: 0.3em;
+    padding: .3em;
+    text-decoration: none;
+    color: rgb(90, 89, 89);
+    position:relative;
+}
+.informacionNormativa i{
+    color: #05ac2c;
+}
+.normativas:hover{
+    text-decoration:underline;
+    color:#03ce32;
+}
+.informacionNormativa i:hover{
+    color:#03ce32;
+    cursor:pointer;
+}
+.footer {
+    background: #025f5f;
+    margin: 1em 0 0 0;
+    padding: 10px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.pie {
+    background:none;
+    flex: 2 1 auto;
+    color: #16d9d9;
+    font-size: 1.4vw;
+    color: rgba(250, 250, 250,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.legal,.legal p {
+    padding: 10px;
+}
+.terminos{
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-flow: row wrap;
+}
+.condiciones{
+    margin: 0 1em .3em 0;
+    text-decoration: none;
+    color: rgba(250, 250, 250,0.7);
+}
+.condiciones:hover{
+    color: #ffffff;
+    text-decoration:underline;
+}
+.social {
+    margin: 10px;
+    padding: 10px;
+    background: none;
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+.socialmedia i{
+    margin: .6em;
+    padding: .6em;
+    width: 2em;
+    height: 2em;
+    background-color: #16d9d9;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.socialmedia{                   
+    text-decoration: none;
+}
+.socialmedia:visited,.socialmedia:link{
+    color: #025f5f;
+}
+.socialmedia i:hover,.socialmedia i:active{
+    background-color: #ffffff;
+}
+
+@media all and (max-width:800px) {
+    .header {
+        position: static;
+    }
+    .uno{
+        background-position: 70%;
+    }
+    .dos{
+        background-position: 80%;
+    }
+    .tres{
+        background-position: 75%;
+    }
+    .fourth{
+        width: 30vw;
+    }
+    .main {
+        flex-direction: column;
+    }
+    .articulo2,
+    .articulo3{
+        flex-flow: column nowrap;  /*acá cambio la orientacion de los articulos 2 y 3*/
+        height:60vh;
+    }
+    .articulo1{
+        margin: 1em 1em;
+    }
+    .imagenDeArticulo1{
+        flex: 1 1 70%;
+    }
+    .textoDeArticulo1{
+        flex: 1 1 30%;
+    }
+    .imagenDeArticulo2,.imagenDeArticulo3{
+        margin: 0;
+        flex: 1 1 60%;
+    }
+    .textoDeArticulo2{
+        margin: 0em 1em;
+        font-size:0.9em;
+        justify-content: space-between;
+        flex: 1 1 40%;
+    }
+    .textoDeArticulo2 h2,.textoDeArticulo2 p,.textoDeArticulo2 a{
+        margin: 0.3em 0;
+    }
+
+    iframe{
+        height: 60vh;
+    }
+    .aside {
+        flex-direction: row;
+        column-gap: 1em;
+    }
+    .one,.two,.prueba{
+        height:50vh;
+    }
+    .misionVision{
+        flex-direction: column;
+    }
+    .valores{
+        height: 100vh;
+        flex-direction: column;
+        row-gap: 1em;
+    }
+    .valor{
+        width: 100%;
+        height: 30%;
+        flex-direction: row;
+    }
+    .imagenValor,.textoValor{
+        height: 100%;
+    }
+    .footer {
+        flex-direction: column;
+    }
+    .pie{
+        font-size: 2vw;
+    }
+    .terminos{
+        align-self: flex-start;
+    }
+    .social{
+        justify-content: flex-end;
+    }
+}
+
+@media all and (max-width:600px) {
+
+    .header {
+        height: 60vw;
+        flex-direction: column;
+    }
+
+    .logo {
+        padding: 0;
+    }
+
+    .link-logo {
+        margin: 0;
+        padding: 0;
+    }
+
+    .logo-imagen {
+        width: 130px;
+    }
+
+    .navegacion {
+        flex-flow: row wrap;
+    }
+
+    .span {
+        flex: 1 1 40%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navega {
+        font-size: 4vw;
+    }
+    .second{
+        width: 55vw; 
+    }
+    .tres{
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+    .third{
+        width: 50vw; 
+    }
+    .fourth{
+        align-self: center;
+        width: 40vw;
+    }
+    .articulos {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: 'principal'
+                             'secundario'
+                             'terciario';
+    }
+    .articulo1{
+        height:60vh;
+    }
+    .imagenDeArticulo1{
+        margin: 0;
+    }
+    .textoDeArticulo1{
+        margin:0 1em;
+    }
+    .textoDeArticulo1 h2,.textoDeArticulo1 p,.textoDeArticulo1 a{
+        margin: 0.3em 0;
+    }
+    .textoDeArticulo2{
+        font-size:1em;
+    }
+    .iframe{
+        justify-content: space-around;
+    }
+    .misionVision{
+        height: 90vh;
+    }
+    .tituloValores{
+        margin-left: 65px;
+    }
+    .valores{
+        height: 160vh;
+        width: 80%;
+    }
+    .valor{
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+    }
+    .imagenValor,.textoValor{
+        height: 50%;
+    }
+    iframe{
+        height: 40vh;
+        padding: 2em 0;
+        width: 95%;
+    }
+    .aside {
+        flex-direction: column;
+    }
+    .pie{
+        font-size: 3vw;
+    }
+    .social{
+        justify-content: center;
+    }
+}
+@media all and (max-width:400px) {
+    .header {
+        height: 115vw;
+    }
+    .navegacion {
+        flex-flow: column nowrap;
+        align-items: flex-start;
+    }
+    .navega {
+        font-size: 5vw;
+    }
+    .hijo.cuatro{
+        justify-content: center;
+    }
+    .first{
+        width:60vw;
+    }
+    .fourth{
+        background: rgb(228, 228, 228);
+        width: 75vw;
+        font-size:14px;
+        position: absolute;
+        bottom:30px;
+        left:8vw;
+    }
+    .iframe{
+        height: 80vh;
+    }
+    .misionVision{
+        height:120vh;
+    }
+    .mision,.vision{
+        height: 50%;
+        flex-flow: column nowrap;
+    }
+
+    .imagen_mision,.imagen_vision{
+        width: 100%;
+        height: 50%;
+    }
+    .texto_mision,.texto_vision{
+        width: 100%;
+    }
+    .tituloValores{
+        margin-left: 20px;
+        font-size: 1.5em;
+    }
+    .valores{
+        height: 180vh;
+        width: 90%;
+        margin-bottom: 3em;
+    }
+    .pie{
+        flex-direction: column;
+        font-size: 4vw;
+    }
+    .social{
+        align-self: flex-start;
+    }
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://kit.fontawesome.com/8a37c13f70.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imagenes/logo.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@100&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/estiloFormulario.css">
+    <title>Bank Argentina</title>
+</head>
+<body onpageshow="miFuncion(3)">
+    <div class="padre">
+        <header class="header" id="idheader">
+        </header>
+        <div class="carrusel">
+            <div class="hijo uno">
+                <div class="parrafo first">
+                    <h2>Prestamos personales</h2>
+                    <p> Para ampliación, refacción y terminación de vivienda</p>
+                </div>
+                <div class="nav">
+                    <ul class="puntos">
+                        <li class="punto" id="puntouno"></li>
+                        <li class="punto"></li>
+                        <li class="punto"></li>
+                        <li class="punto"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="hijo dos">
+                <div class="parrafo second">
+                    <h2>Tienda Online</h2>
+                    <p>Compra por la web todo lo que buscás</p>
+                </div>
+                <div class="nav">
+                    <ul class="puntos">
+                        <li class="punto"></li>
+                        <li class="punto" id="puntodos"></li>
+                        <li class="punto"></li>
+                        <li class="punto"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="hijo tres">
+                <div class="parrafo third">
+                    <h2>Independizate</h2>
+                    <p>Un sitio web interactivo pensado para los adultos mayores</p>
+                </div>
+                <div class="nav">
+                    <ul class="puntos">
+                        <li class="punto"></li>
+                        <li class="punto"></li>
+                        <li class="punto" id="puntotres"></li>
+                        <li class="punto"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="hijo cuatro">
+                <div class="parrafo fourth">
+                    <h2>Financiación MiPyme</h2>
+                    <p>Te brindamos herramientas a medidad para impulsar tu empresa</p>
+                </div>
+                <div class="nav">
+                    <ul class="puntos">
+                        <li class="punto"></li>
+                        <li class="punto"></li>
+                        <li class="punto"></li>
+                        <li class="punto" id="puntocuatro"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+<!-- ----------------------------------------------------------->
+
+        <div class="contenedor-formulario">
+            <div class="mini-contenedor">
+                <form action="" class="formulario" name="formulario_registro" method="get">
+                    <div>
+                        <div class="grupo-input">
+                            <input type="text" id="nombre" name="nombre">
+                            <label for="nombre" class="label">Nombre: </label>
+                        </div>
+                        <div class="grupo-input">
+                            <input type="text" id="apellido" name="apellido">
+                            <label for="apellido" class="label">Apellido: </label>
+                        </div>
+                        <div class="grupo-input">
+                            <input type="email" id="email" name="email">
+                            <label for="email" class="label">Email: </label>
+                        </div>
+                        <div class="grupo-input">
+                            <input type="text" id="documento" name="documento" class="documento" maxlength="8">
+                            <label for="documento" class="label">DNI: </label>
+                        </div>
+                        <div class="grupo-input">
+                            <input type="date" id="date" name="date">
+                            <label for="date" id="date" class="label date">Fecha de nacimiento: </label>
+                        </div>
+                        <div class="grupo-input radio">
+                            <input type="radio" id="hombre" name="genero" value="Hombre">
+                            <label class="labelradio" for="hombre">Masculino </label>
+                            <input type="radio" id="mujer" name="genero" value="Mujer">
+                            <label class="labelradio" for="mujer">Femenino </label>
+                            <input type="radio" id="otro" name="genero" value="otro">
+                            <label class="labelradio" for="otro">Otro </label>
+                        </div>
+                        <div class="grupo-input checkbox">
+                            <input type="checkbox" name="terminos" id="terminos" value="true">
+                            <label for="terminos" class="labelCheckbox">Acepto los terminos y condicones</label>
+                        </div>
+                        <input type="submit" id="btn-submit" value="Enviar">
+                    </div>
+                </form>
+            </div>
+        </div>
+<!-- --------------------------------------------------------- -->
+        <footer class="footer" id="idfooter">
+        </footer>
+    </div>
+    <script src="js/validacionFormulario.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/data.js"></script>
+</body>
+</html>
